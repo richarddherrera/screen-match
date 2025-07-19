@@ -1,0 +1,19 @@
+package com.richard.screen_match;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ScreenMatchApplication implements CommandLineRunner { // Implementamos esta interface para poder usar a linha de comando
+
+	public static void main(String[] args) {
+		SpringApplication.run(ScreenMatchApplication.class, args);
+	}
+
+	// Como implementamos aquela interace precisamos implementar este metodo para ele agir como um metodo main
+	@Override
+	public void run(String... args) throws Exception {
+		System.out.println("Primeiro projeto Spring sem web");
+	}
+}
