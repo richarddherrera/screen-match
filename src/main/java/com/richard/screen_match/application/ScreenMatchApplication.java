@@ -1,5 +1,6 @@
-package com.richard.screen_match;
+package com.richard.screen_match.application;
 
+import com.richard.screen_match.service.ConsumoAPI;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,6 +15,8 @@ public class ScreenMatchApplication implements CommandLineRunner { // Implementa
 	// Como implementamos aquela interace precisamos implementar este metodo para ele agir como um metodo main
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println("Primeiro projeto Spring sem web");
+		var consumoApi = new ConsumoAPI();
+		var json = consumoApi.obterDados("https://www.omdbapi.com/?t=gilmore+girls&apikey=6585022c");
+		System.out.println(json);
 	}
 }
